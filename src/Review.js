@@ -24,23 +24,28 @@ const Review = () => {
   };
 
   return (
-    <div>
-      <img
-        style={{ height: "5rem" }}
-        src={people[counter].image}
-        alt="yes"
-      ></img>
-      <h3>Name: {people[counter].name}</h3>
-      <h4>Job : {people[counter].job}</h4>
-      <p>{people[counter].text}</p>
-      <button onClick={backwardbtnHandeler}>
-        <FaChevronLeft />
+    <article className="review">
+      <div className="img-container">
+        <img className="person-img" src={people[counter].image} alt="yes"></img>
+        <span className="quote-icon">
+          <FaQuoteRight />
+        </span>
+      </div>
+      <h4 className="author"> {people[counter].name}</h4>
+      <p className="job">{people[counter].job}</p>
+      <p className="info">{people[counter].text}</p>
+      <div className="btn-container">
+        <button className="prev-btn" onClick={backwardbtnHandeler}>
+          <FaChevronLeft />
+        </button>
+        <button className="next-btn" onClick={forwardbtnHandeler}>
+          <FaChevronRight />
+        </button>
+      </div>
+      <button className="random-btn" onClick={surpriseHandeler}>
+        SurpriseMe
       </button>
-      <button onClick={forwardbtnHandeler}>
-        <FaChevronRight />
-      </button>
-      <button onClick={surpriseHandeler}>SurpriseMe</button>
-    </div>
+    </article>
   );
 };
 
