@@ -19,7 +19,8 @@ const Review = () => {
     }
   };
   const surpriseHandeler = () => {
-    setCounter(Math.floor(Math.random() * people.length));
+    const randno = Math.floor(Math.random() * people.length);
+    setCounter(randno);
   };
 
   return (
