@@ -4,7 +4,7 @@ import people from "./data";
 
 const Review = () => {
   const [counter, setCounter] = useState(0);
-  const btnHandeler = () => {
+  const forwardbtnHandeler = () => {
     if (counter === 3) {
       setCounter(0);
     } else {
@@ -18,6 +18,9 @@ const Review = () => {
       setCounter((preid) => preid - 1);
     }
   };
+  const surpriseHandeler = () => {
+    setCounter(Math.floor(Math.random() * people.length));
+  };
 
   return (
     <div>
@@ -30,7 +33,8 @@ const Review = () => {
       <h4>Job : {people[counter].job}</h4>
       <p>{people[counter].text}</p>
       <button onClick={backwardbtnHandeler}>Backward</button>
-      <button onClick={btnHandeler}>Forward</button>
+      <button onClick={forwardbtnHandeler}>Forward</button>
+      <button onClick={surpriseHandeler}>SurpriseMe</button>
     </div>
   );
 };
