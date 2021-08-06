@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import people from "./data";
-//import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 
 const Review = () => {
   const [counter, setCounter] = useState(0);
@@ -33,8 +33,12 @@ const Review = () => {
       <h3>Name: {people[counter].name}</h3>
       <h4>Job : {people[counter].job}</h4>
       <p>{people[counter].text}</p>
-      <button onClick={backwardbtnHandeler}>Backward</button>
-      <button onClick={forwardbtnHandeler}>Forward</button>
+      <button onClick={backwardbtnHandeler}>
+        <FaChevronLeft />
+      </button>
+      <button onClick={forwardbtnHandeler}>
+        <FaChevronRight />
+      </button>
       <button onClick={surpriseHandeler}>SurpriseMe</button>
     </div>
   );
