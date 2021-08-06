@@ -5,11 +5,20 @@ import people from "./data";
 const Review = () => {
   const [counter, setCounter] = useState(0);
   const btnHandeler = () => {
-    setCounter((preid) => preid + 1);
+    if (counter === 3) {
+      setCounter(0);
+    } else {
+      setCounter((preid) => preid + 1);
+    }
   };
   const backwardbtnHandeler = () => {
-    setCounter((preid) => preid - 1);
+    if (counter === 0) {
+      setCounter(3);
+    } else {
+      setCounter((preid) => preid - 1);
+    }
   };
+
   return (
     <div>
       <img
@@ -20,9 +29,8 @@ const Review = () => {
       <h3>Name: {people[counter].name}</h3>
       <h4>Job : {people[counter].job}</h4>
       <p>{people[counter].text}</p>
-
-      <button onClick={btnHandeler}>Forward</button>
       <button onClick={backwardbtnHandeler}>Backward</button>
+      <button onClick={btnHandeler}>Forward</button>
     </div>
   );
 };
