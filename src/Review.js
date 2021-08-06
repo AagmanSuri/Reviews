@@ -13,7 +13,7 @@ const Review = () => {
   };
   const backwardbtnHandeler = () => {
     if (counter === 0) {
-      setCounter(3);
+      setCounter(people.length - 1);
     } else {
       setCounter((preid) => preid - 1);
     }
